@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let nextRandom = 0;
     let timerId;
     let score = 0;
+    const colors = ['#e76f51', '#e63946', '#7400b8', '#2a9d8f', '#457b9d'];
 
     // The Tetrominoes
     const lTetromino = [
@@ -63,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function draw() {
         current.forEach(index => {
             squares[currentPosition + index].classList.add('tetromino');
+            squares[currentPosition + index].style.backgroundColor = colors[random];
         });
     }
 
@@ -70,11 +72,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function undraw() {
         current.forEach(index => {
             squares[currentPosition + index].classList.remove('tetromino');
+            squares[currentPosition + index].style.backgroundColor = '';
         });
     }
-
-    // Move the Teromino down every second
-    //timerId = setInterval(moveDown, 1000);
 
     // Assign functions to key codes
     function control(e) {
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         freeze();
     }
 
-    // Freeze tetromino
+    // Freeze Tetromino
     function freeze() {
         if (
             current.some(index =>
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Move the teromino left, unless it is at the edge or there is a blockage
+    // Move the Tetromino left, unless it is at the edge or there is a blockage
     function moveLeft() {
         undraw();
         const isAtLeftEdge = current.some(
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
         draw();
     }
 
-    // Move the teromino right, unless it is at the edge or there is a blockage
+    // Move the Tetromino right, unless it is at the edge or there is a blockage
     function moveRight() {
         undraw();
         const isAtRightEdge = current.some(
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
         draw();
     }
 
-    // Rotate the tetromino
+    // Rotate the Tetromino
     function rotate() {
         undraw();
         currentRotation++;
@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const displaySquares = document.querySelectorAll('.mini-grid div');
     const displayWidth = 4;
-    let displayIndex = 0;
+    const displayIndex = 0;
 
     // The Tetrominos without rotations
     const upNextTetrominos = [
@@ -192,9 +192,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Remove any trace of a Tetromino form on the entire grid
         displaySquares.forEach(square => {
             square.classList.remove('tetromino');
+            square.style.backgroundColor = '';
         });
         upNextTetrominos[nextRandom].forEach(index => {
             displaySquares[displayIndex + index].classList.add('tetromino');
+            displaySquares[displayIndex + index].style.backgroundColor = colors[nextRandom];
         });
     }
 
@@ -233,6 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 row.forEach(index => {
                     squares[index].classList.remove('taken');
                     squares[index].classList.remove('tetromino');
+                    squares[index].style.backroundColor = '';
                 });
                 const squaresRemoved = squares.splice(i, width);
                 squares = squaresRemoved.concat(squares);
