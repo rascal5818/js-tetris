@@ -1,3 +1,8 @@
+/*  Reis Caffrey
+    Tetris JS
+    16/06/2020
+*/
+
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.grid');
     let squares = Array.from(document.querySelectorAll('.grid div')); // place all 200 div elements into array
