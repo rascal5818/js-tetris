@@ -1,9 +1,10 @@
 .grid {
+    margin-top: 20px;
     width: 200px;
     height: 400px;
     display: flex;
     flex-wrap: wrap;
-    background-color: #ffe5d9;
+    background-color: #FFEC51;
 }
 
 .grid div {
@@ -11,17 +12,14 @@
     height: 20px;
 }
 
-.tetromino { 
-    background-color: royalblue;
-}
-
 .mini-grid {
-    margin-left: 50px;
+    margin-top: 20px;
+    margin-left: 30px;
     width: 80px;
     height: 80px;
     display: flex;
     flex-wrap: wrap;
-    background-color: #ffe5d9;
+    background-color: #FFEC51;
 }
 
 .mini-grid div {
@@ -31,4 +29,28 @@
 
 .container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    font-weight: 400;
+    color: #DC0073;
+    background-color: #FFFBDB;
+    text-align: center;
+}
+
+button {
+    border-radius: 40px;
+    cursor: pointer;
+    outline: none;
+    font-family: inherit;
+    font-size: 0.8em;
+    color: inherit;
+    padding: 15px 15px;
+}
+
+h1 {
+    font-size: 32px;
 }
