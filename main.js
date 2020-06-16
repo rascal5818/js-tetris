@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let score = 0;
     const colors = ['#e76f51', '#e63946', '#7400b8', '#2a9d8f', '#457b9d'];
 
+
     // The Tetrominoes
     const lTetromino = [
         [1, width + 1, width * 2 + 1, 2],
@@ -268,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 row.forEach(index => {
                     squares[index].classList.remove('taken');
                     squares[index].classList.remove('tetromino');
-                    squares[index].style.backroundColor = '';
+                    squares[index].style.backgroundColor = '';
                 });
                 const squaresRemoved = squares.splice(i, width);
                 squares = squaresRemoved.concat(squares);
