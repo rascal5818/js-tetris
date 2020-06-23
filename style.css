@@ -4,12 +4,12 @@
 }
 
 .grid {
-    margin-top: 20px;
+    margin-top: 50px;
     width: 200px;
     height: 400px;
     display: flex;
     flex-wrap: wrap;
-    background-color: #FFEC51;
+    background-color: #ffd23f;
 }
 
 .grid div {
@@ -22,13 +22,13 @@
 }
 
 .mini-grid {
-    margin-top: 20px;
+    margin-top: 50px;
     margin-left: 30px;
     width: 80px;
     height: 80px;
     display: flex;
     flex-wrap: wrap;
-    background-color: #FFEC51;
+    background-color: #ffd23f;
 }
 
 .mini-grid div {
@@ -39,8 +39,8 @@
 body {
     font-family: 'Press Start 2P', cursive;
     font-weight: 400;
-    color: #DC0073;
-    background-color: #FFFBDB;
+    color: #390099;
+    background-color: #eff7f6;
     text-align: center;
 }
 
